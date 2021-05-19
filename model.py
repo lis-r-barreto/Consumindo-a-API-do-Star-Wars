@@ -1,7 +1,7 @@
 import requests
 import json
 
-class Rota:
+class Model():
     def __init__(self):
         self.response_personagens = requests.get('https://swapi.dev/api/people/')
         self.personagens = []
@@ -16,100 +16,59 @@ class Rota:
         self.response_naves = requests.get('https://swapi.dev/api/starships/')
         self.naves = []
 
-    def mostrar_personagens(self):
-        # Checando o status da requisição
-        #response = requests.get('https://swapi.dev/api/people/')
-        if (self.response_personagens):
-            print(f"Situação de código: {self.response_personagens.status_code}")
-        else:
-            print(f"Ops! Falha no servidor. Situação de código: {self.response_personagens.status_code}")
-
+    def gerar_lista_personagens(self):
         # Transformando dados de personagens json em dicionários filtrados por key=results
         dados_personagens = json.loads(self.response_personagens.text)['results']
-
         # Criando lista de personagens
         for self.personagem in dados_personagens:
             self.personagens.append(self.personagem['name'])
-        print(f"Lista de personagens de Star Wars: {self.personagens}")
+        for self.personagem in self.personagens:
+            print(self.personagem)
 
-    def mostrar_planetas(self):
-        # Checando o status da requisição
-        if (self.response_planetas):
-            print(f"Situação de código: {self.response_planetas.status_code}")
-        else:
-            print(f"Ops! Falha no servidor. Situação de código: {self.response_planetas.status_code}")
-
+    def gerar_lista_planetas(self):
         # Transformando dados de planetas json em dicionários filtrados por key=results
         dados_planetas = json.loads(self.response_planetas.text)['results']
-
         # Criando lista de planetas
         for planeta in dados_planetas:
             self.planetas.append(planeta['name'])
-        print(f"Lista de planetas de Star Wars: {self.planetas}")
+        for self.planeta in self.planetas:
+            print(self.planeta)
 
-    def mostrar_filmes(self):
-        # Checando o status da requisição
-        if (self.response_filmes):
-            print(f"Situação de código: {self.response_filmes.status_code}")
-        else:
-            print(f"Ops! Falha no servidor. Situação de código: {self.response_filmes.status_code}")
-
+    def gerar_lista_filmes(self):
         # Transformando dados de filmes json em dicionários filtrados por key=results
         dados_filme = json.loads(self.response_filmes.text)['results']
-
         # Criando lista de filmes
         for filme in dados_filme:
             self.filmes.append(filme['title'])
-        print(f"Lista de filmes Star Wars: {self.filmes}")
+        for self.filme in self.filmes:
+            print(self.filme)
 
-    def mostrar_veiculos(self):
-        # Checando o status da requisição
-        if (self.response_veiculos):
-            print(f"Situação de código: {self.response_veiculos.status_code}")
-        else:
-            print(f"Ops! Falha no servidor. Situação de código: {self.response_veiculos.status_code}")
-
+    def gerar_lista_veiculos(self):
         # Transformando dados de veículos json em dicionários filtrados por key=results
         dados_veiculos = json.loads(self.response_veiculos.text)['results']
-
         # Criando lista de veículos
         for veiculo in dados_veiculos:
             self.veiculos.append(veiculo['name'])
-        print(f"Lista de veículos de Star Wars: {self.veiculos}")
+        for self.veiculo in self.veiculos:
+            print(self.veiculo)
 
-    def mostrar_especies(self):
-        # Checando o status da requisição
-        if (self.response_especies):
-            print(f"Situação de código: {self.response_especies.status_code}")
-        else:
-            print(f"Ops! Falha no servidor. Situação de código: {self.response_especies.status_code}")
+    def gerar_lista_naves(self):
+        # Transformando dados de naves json em dicionários filtrados por key=results
+        dados_naves = json.loads(self.response_naves.text)['results']
+        # Criando lista de naves
+        for nave in dados_naves:
+            self.naves.append(nave['name'])
+        for self.nave in self.naves:
+            print(self.nave)
 
+    def gerar_lista_especies(self):
         # Transformando dados de espécies json em dicionários filtrados por key=results
         dados_especies = json.loads(self.response_especies.text)['results']
         # Criando lista de espécies
         for especie in dados_especies:
             self.especies.append(especie['name'])
-        print(f"Lista de espécies de Star Wars: {self.especies}")
+        for self.especie in self.especies:
+            print(self.especie)
 
-    def mostrar_naves(self):
-        # Checando o status da requisição
-        if (self.response_naves):
-            print(f"Situação de código: {self.response_naves.status_code}")
-        else:
-            print(f"Ops! Falha no servidor. Situação de código: {self.response_naves.status_code}")
-        # Transformando dados de naves json em dicionários filtrados por key=results
-        dados_naves = json.loads(self.response_naves.text)['results']
-
-        # Criando lista de naves
-        for nave in dados_naves:
-            self.naves.append(nave['name'])
-        print(f"Lista de naves de Star Wars: {self.naves}")
-
-class Validacao:
-        def __init__(self):
-            self.url = str(input('Digite o site que você deseja acessar: '))
-            self.url_valida = requests.get(self.url)
-        # verifica a url ---------------------------------------------------------------------------------------------------------------
-        def verificar_url(self):
-            print(f'---\nStatus Code: {self.url_valida.status_code}')
-        #retonar_menu_inicial()
+model = Model()
+model.gerar_lista_filmes()
