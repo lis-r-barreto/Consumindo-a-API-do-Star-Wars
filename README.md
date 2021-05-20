@@ -41,7 +41,7 @@ cd Consumindo-a-API-do-Star-Wars
 - Rode o comando para instalação das dependências
 
 ```console
-pip install -r requirements.txx
+pip install -r requirements.txt
 ```
 
 - Rode o projeto
