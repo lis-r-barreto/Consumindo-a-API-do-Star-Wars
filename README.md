@@ -16,13 +16,13 @@ Instalação no Linux
 
 - Verifique se o git já está instalado, com o comando:
 ```console
-$ git --version
+git --version
 ```
 
 - Se a saída for algo como `git version 2.25.1`, significa que o git já está
 instalado. Caso contrário, para instalar o git basta fazer:
 ``` console
-$ sudo apt install git  # para ubuntu
+sudo apt install git  # para ubuntu
 ```
 
 > **Observação**: Esse comando funciona apenas em sistemas operacionais que utilizam o
@@ -31,21 +31,21 @@ $ sudo apt install git  # para ubuntu
 - Assumindo que seu git já está configurado, faça o clone do repositório
 
 ```console
-$ git clone https://github.com/lis-r-barreto/Consumindo-a-API-do-Star-Wars.git
+git clone https://github.com/lis-r-barreto/Consumindo-a-API-do-Star-Wars.git
 ```
 - Após conclusão do clone, acesse o diretório recém-criado
 
 ```console
-$ cd Consumindo-a-API-do-Star-Wars
+cd Consumindo-a-API-do-Star-Wars
 ```
 - Rode o comando para instalação das dependências
 
 ```console
-$ pip install -r requirements.txx
+pip install -r requirements.txx
 ```
 
 - Rode o projeto
 
 ```console
-$ python main.py
+python main.py
 ```
