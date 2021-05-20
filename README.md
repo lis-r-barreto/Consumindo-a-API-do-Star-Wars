@@ -47,5 +47,5 @@ pip install -r requirements.txt
 - Rode o projeto
 
 ```console
-python main.py
+python3 main.py
 ```
