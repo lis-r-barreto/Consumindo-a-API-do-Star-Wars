@@ -67,7 +67,7 @@ $ pip install -r requirements.txt	# instala as dependências
 - Rode o projeto
 
 ```console
-$ python3 main.py
+$ python main.py
 ```
 
 - Para desativar o ambiente virtual
