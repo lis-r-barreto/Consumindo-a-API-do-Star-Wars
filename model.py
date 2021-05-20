@@ -69,6 +69,3 @@ class Model():
             self.especies.append(especie['name'])
         for self.especie in self.especies:
             print(self.especie)
-
-model = Model()
-model.gerar_lista_filmes()
